@@ -1,5 +1,7 @@
 package com.example.diegosalva.contactoactivity;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,7 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText etEmail;
     private EditText etDescripcion;
     private Button bSiguiente;
-    private static DatePicker dpFecha;
+    private DatePicker dpFecha;
+
+    private Datos mDatos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,25 +35,24 @@ public class MainActivity extends AppCompatActivity {
         etEmail = (EditText) findViewById(R.id.etEmail);
         etDescripcion = (EditText) findViewById(R.id.etDescripcion);
 
-        final DatePicker dpFecha= (DatePicker) findViewById(R.id.dpFecha);
+        dpFecha = (DatePicker) findViewById(R.id.dpFecha);
 
-        bSiguiente=(Button) findViewById(R.id.bSiguiente);
+        bSiguiente = (Button) findViewById(R.id.bSiguiente);
 
         bSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nombre= etNombre.getText().toString();
+                mostrarDatos();
+
+                String nombre = etNombre.getText().toString();
                 String telefono = etTelefono.getText().toString();
-                String email= etEmail.getText().toString();
-                String descripcion= etDescripcion.getText().toString();
+                String email = etEmail.getText().toString();
+                String descripcion = etDescripcion.getText().toString();
 
-                Toast.makeText(MainActivity.this, dpFecha.getDayOfMonth() + "/" + dpFecha.getMonth() + "/" + dpFecha.getYear(), Toast.LENGTH_LONG).show();
-
-                //int day= dpFecha.getDayOfMonth();
-                //int month=dpFecha.getMonth();
-                //int year=dpFecha.getYear();
+                //Toast.makeText(MainActivity.this, dpFecha.getDayOfMonth() + "/" + dpFecha.getMonth() + "/" + dpFecha.getYear(), Toast.LENGTH_LONG).show();
 
                 Intent iSiguiente = new Intent(MainActivity.this, ConfirmarDatos.class);
+                iSiguiente.putExtra("fechaKey", mDatos.getmFecha());
                 Bundle bndAlmacenar = new Bundle();
                 bndAlmacenar.putString(getResources().getString(R.string.nombreKey), nombre);
                 bndAlmacenar.putString(getResources().getString(R.string.telefonoKey), telefono);
@@ -54,12 +60,29 @@ public class MainActivity extends AppCompatActivity {
                 bndAlmacenar.putString(getResources().getString(R.string.descripcionKey), descripcion);
 
 
-
                 iSiguiente.putExtras(bndAlmacenar);
                 startActivity(iSiguiente);
             }
         });
+    }
+
+        private void mostrarDatos(){
+            String mounth;
+            String day;
+            String year;
+            String fecha;
+
+            mDatos= new Datos();
+
+            //Tomar datos de fecha del picker
+            mounth  =String.valueOf(dpFecha.getMonth());
+            day     =String.valueOf(dpFecha.getDayOfMonth());
+            year    =String.valueOf(dpFecha.getYear());
+            fecha   = day+"/"+mounth+"/"+year;
+
+            mDatos.setmFecha(fecha);
+            }
 
     }
 
-}
+

@@ -11,6 +11,15 @@
     tools:context="com.example.diegosalva.contactoactivity.ConfirmarDatos">
 
     <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirmar Datos"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:inputType="textCapSentences"/>
+
+    <TextView
         android:id="@+id/tvNombreCompleto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,5 +65,3 @@
         />
 
 </LinearLayout>
-
-

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Contactos Activity</string>
     <string name="nombreCompleto">Nombre completo</string>
-    <string name="telefono">Telefono</string>
+    <string name="telefono">Teléfono</string>
     <string name="email">Email</string>
     <string name="fecha">Fecha de nacimiento</string>
     <string name="descripcionContacto">Descripción contacto</string>

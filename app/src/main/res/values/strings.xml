@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Contactos Activity</string>
+    <string name="nombreCompleto">Nombre completo</string>
+    <string name="telefono">Telefono</string>
+    <string name="email">Email</string>
+    <string name="fecha">Fecha de nacimiento</string>
+    <string name="descripcionContacto">Descripción contacto</string>
+    <string name="bSiguiente">Siguiente</string>
+    <string name="bEditar">Editar Datos</string>
+
+    <string name="pnombre">nombre</string>
+    <string name="ptelefono">telefono</string>
+    <string name="pemail">email</string>
+    <string name="pdescripcion">descripcion</string>
+
+    <string name="nombreKey">nombreKey</string>
+    <string name="telefonoKey">telefonoKey</string>
+    <string name="emailKey">emailKey</string>
+    <string name="descripcionKey">descripcionKey</string>
+    <string name="fechaKey">fechaKey</string>
+
+</resources>

@@ -30,7 +30,7 @@ public class ConfirmarDatos extends AppCompatActivity {
         bEditar= (Button) findViewById(R.id.bEditar);
 
         Bundle bndRecuperar = getIntent().getExtras();
-        tvNombre.setText((CharSequence) bndRecuperar.get(getResources().getString(R.string.nombreKey)));
+        tvNombre.setText("Nombre: "+(CharSequence) bndRecuperar.get(getResources().getString(R.string.nombreKey)));
         tvTelefono.setText((CharSequence) bndRecuperar.get(getResources().getString(R.string.telefonoKey)));
         tvEmail.setText((CharSequence) bndRecuperar.get(getResources().getString(R.string.emailKey)));
         tvDescripcion.setText((CharSequence) bndRecuperar.get(getResources().getString(R.string.descripcionKey)));

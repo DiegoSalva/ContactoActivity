@@ -31,9 +31,9 @@ public class ConfirmarDatos extends AppCompatActivity {
 
         Bundle bndRecuperar = getIntent().getExtras();
         tvNombre.setText("Nombre: "+(CharSequence) bndRecuperar.get(getResources().getString(R.string.nombreKey)));
-        tvTelefono.setText((CharSequence) bndRecuperar.get(getResources().getString(R.string.telefonoKey)));
-        tvEmail.setText((CharSequence) bndRecuperar.get(getResources().getString(R.string.emailKey)));
-        tvDescripcion.setText((CharSequence) bndRecuperar.get(getResources().getString(R.string.descripcionKey)));
+        tvTelefono.setText("Telefono: "+(CharSequence) bndRecuperar.get(getResources().getString(R.string.telefonoKey)));
+        tvEmail.setText("Email: "+(CharSequence) bndRecuperar.get(getResources().getString(R.string.emailKey)));
+        tvDescripcion.setText("Descripción: "+(CharSequence) bndRecuperar.get(getResources().getString(R.string.descripcionKey)));
 
 
         bEditar.setOnClickListener(new View.OnClickListener() {
